@@ -1,0 +1,4 @@
+---
+- name: Generate configuration files
+  template: src=router.255 dest="./configs/{{item.hostname}}.cfg"
+  with_items: "{{ routers }}"

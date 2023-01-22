@@ -1,0 +1,11 @@
+{% for interface in item.interfaces %}
+interface {{interface.intf}}
+ ip address {{interface.ip}}
+ no shutdown
+!
+{% endfor %}
+
+router ospf {{ item.ospf.id }}
+{% for net in item.ospf.network %}
+ network {{ net }}
+{% endfor %}
